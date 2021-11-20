@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block Title %}
-  Home
+  Update
 {% endblock Title %}
 {% block body %}
     <div class="container my-3">
-      <h2>Add your todo</h2>
+      <h2>Update todo</h2>
       <form action="/" method="POST">
         <div class="mb-3">
           <label for="title" class="form-label">Todo title </label>
@@ -17,46 +17,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
-    <div class="container my-3">
-      {% if allTodos|length==0 %} No Record {% else %}
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Sno</th>
-            <th scope="col">Title</th>
-            <th scope="col">Description</th>
-            <th scope="col">Time</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for todo in allTodos %}
-          <tr>
-            <th scope="row">{{loop.index}}</th>
-            <td>{{todo.title}}</td>
-            <td>{{todo.description}}</td>
-            <td>{{todo.date_created}}</td>
-            <td>
-              <a
-                href="/update/{{todo.sno}}"
-                type="button"
-                class="btn btn-outline-info btn-sm"
-              >
-                Update</a
-              >
-              <a
-                href="/delete/{{todo.sno}}"
-                type="button"
-                class="btn btn-outline-danger btn-sm"
-              >
-                Delete</a
-              >
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-      {% endif %}
-    </div>
+ 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
